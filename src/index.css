@@ -7,13 +7,13 @@
         font-family: "azonix";
         font-style: normal;
         font-display: swap;
-        src: url("/fonts/Azonix-1VB0.otf");
+        src: url("./assets/fonts/Azonix-1VB0.otf");
     }
     @font-face {
         font-family: "cantarell";
         font-style: normal;
         font-display: swap;
-        src: url("/fonts/Cantarell-Regular.otf");
+        src: url("./assets/fonts/Cantarell-Regular.otf");
     }
 }
 

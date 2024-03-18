@@ -1,5 +1,9 @@
 import { TechCarousal } from "./components/TechCarousal"
 import { Button } from "./components/Button"
+import githubLogoSvg from "./assets/github-mark-white.svg"
+import emailSvg from "./assets/email.svg"
+import kriptpharmaThumbnail from "./assets/kriptpharma.netlify.app_.png"
+import pathfinderThumbnail from "./assets/pathfinder thumbnail.png"
 
 function App() {
     return (
@@ -27,7 +31,7 @@ function App() {
 
 const projects = [
     {
-        thumbnailUrl: "/pathfinder thumbnail.png",
+        thumbnailUrl: pathfinderThumbnail,
         name: "Pathfinder Visualizer",
         technologies: ["javascript", "typescript", "react"],
         features: ["virtualization", "web workers"],
@@ -57,7 +61,7 @@ const projects = [
         description: "A feature rich messaging app",
     },
     {
-        thumbnailUrl: "/kriptpharma.netlify.app_.png",
+        thumbnailUrl: kriptpharmaThumbnail,
         name: "Kriptpharma",
         technologies: ["javascript", "typescript", "react"],
         features: [],
@@ -168,7 +172,7 @@ const Projects = () => {
 const ContactSection = () => {
     const contacts = [
         {
-            logoUrl: "/github-mark-white.svg",
+            logoUrl: githubLogoSvg,
             account: "github",
             href: "https://www.github.com/decipher-cs",
             handle: "decipher-cs",
@@ -182,7 +186,7 @@ const ContactSection = () => {
             handle: "decipher-cs",
         },
         {
-            logoUrl: "/email.svg",
+            logoUrl: emailSvg,
             account: "email",
             href: "mailto:7h6ms082@duck.com",
             handle: "7h6ms082@duck.com",
