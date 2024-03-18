@@ -81,7 +81,8 @@ const projects = [
             "Frontend website displaying statistics for more than 220 countries using the official rest countries API",
     },
     {
-        thumbnailUrl: "",
+        thumbnailUrl:
+            "https://res.cloudinary.com/dz209s6jk/image/upload/v1606414078/Challenges/vjbu8raudheodagmjfz2.jpg",
         name: "Stateful Task Tracker",
         technologies: ["React", "MUI", "MYSQL", "Node", "Express", "Docker"],
         features: [],
@@ -115,9 +116,9 @@ const Projects = () => {
                 }) => (
                     <article
                         key={name}
-                        className="grid grid-cols-1 gap-8 rounded-md border border-customBorder bg-customBlackDark px-4 py-10 sm:max-w-screen-sm sm:px-6  md:max-w-screen-md lg:max-w-screen-lg lg:grid-cols-2 lg:gap-16 lg:px-8"
+                        className="grid grid-cols-1 gap-8 border border-customBorder bg-customBlackDark px-4 py-10 sm:max-w-screen-sm sm:px-6  md:max-w-screen-md lg:max-w-screen-lg lg:grid-cols-2 lg:gap-16 lg:px-8"
                     >
-                        <div className="relative h-64 overflow-hidden rounded-lg border border-customBorder md:h-80 lg:order-first lg:h-96">
+                        <div className="relative h-64 overflow-hidden rounded-sm border border-customBorder md:h-80 lg:order-first lg:h-96">
                             <img
                                 alt={name + " thumbnail"}
                                 src={thumbnailUrl}
@@ -211,7 +212,7 @@ const ContactSection = () => {
                             <img
                                 src={logoUrl}
                                 alt={account}
-                                className="size-6 md:size-8"
+                                className="size-6 md:size-7"
                             />
                         </a>
                     </li>
