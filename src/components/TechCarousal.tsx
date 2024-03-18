@@ -43,35 +43,34 @@ export const TechCarousal = () => {
         },
     ] satisfies { href: string; src: string; title: string }[]
     return (
-        <>
-            <section className="my-20 w-full">
-                <div
-                    className="m-[0_auto] flex items-center overflow-hidden sm:w-full md:w-1/2 lg:w-1/2"
-                    style={{
-                        mask: "linear-gradient(90deg, transparent, white 10%, white 90%, transparent)",
-                    }}
-                >
-                    <div className="flex animate-horizontalScroll">
-                        {[...technologies, ...technologies].map(
-                            ({ title, href, src }) => (
-                                <a
-                                    className="size-28 p-5"
-                                    title={title}
-                                    href={href}
-                                    target="_blank"
-                                >
-                                    <img
-                                        height="100%"
-                                        className="object-contain"
-                                        alt={title + " logo"}
-                                        src={src}
-                                    />
-                                </a>
-                            )
-                        )}
-                    </div>
+        <section className="my-20 w-full">
+            <div
+                className="m-[0_auto] flex items-center overflow-hidden sm:w-full md:w-1/2 lg:w-1/2"
+                style={{
+                    mask: "linear-gradient(90deg, transparent, white 10%, white 90%, transparent)",
+                }}
+            >
+                <div className="flex animate-horizontalScroll">
+                    {[...technologies, ...technologies].map(
+                        ({ title, href, src }, i) => (
+                            <a
+                                key={i}
+                                className="size-28 p-5"
+                                title={title}
+                                href={href}
+                                target="_blank"
+                            >
+                                <img
+                                    height="100%"
+                                    className="object-contain"
+                                    alt={title + " logo"}
+                                    src={src}
+                                />
+                            </a>
+                        )
+                    )}
                 </div>
-            </section>
-        </>
+            </div>
+        </section>
     )
 }
