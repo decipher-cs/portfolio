@@ -27,7 +27,7 @@ function App() {
 
 const projects = [
     {
-        thumbnailUrl: "../public/pathfinder thumbnail.png",
+        thumbnailUrl: "/pathfinder thumbnail.png",
         name: "Pathfinder Visualizer",
         technologies: ["javascript", "typescript", "react"],
         features: ["virtualization", "web workers"],
@@ -48,6 +48,8 @@ const projects = [
             "node",
             "express",
             "sockets",
+            "MYSQL",
+            "Prisma",
         ],
         features: ["sockets"],
         appUrl: "https://cipher-connect.onrender.com/",
@@ -75,15 +77,14 @@ const projects = [
             "Frontend website displaying statistics for more than 220 countries using the official rest countries API",
     },
     {
-        thumbnailUrl:
-            "https://res.cloudinary.com/dz209s6jk/image/upload/v1554827486/Challenges/jfrcfmcisi1xiwm4rl1s.jpg",
-        name: "Restful Countries",
-        technologies: ["Vanilla JS", "REST API"],
+        thumbnailUrl: "",
+        name: "Stateful Task Tracker",
+        technologies: ["React", "MUI", "MYSQL", "Node", "Express", "Docker"],
         features: [],
-        appUrl: "https://benevolent-wisp-773a15.netlify.app/",
-        sourceCode: "https://github.com/decipher-cs/Restful-Countries",
+        appUrl: "https://golden-liger-9ba371.netlify.app/",
+        sourceCode: "https://github.com/decipher-cs/React-Task-Tracker",
         description:
-            "Frontend website displaying statistics for more than 220 countries using the official rest countries API",
+            "A fullstack stateful paginated task tracker to keep track of items",
     },
 ] satisfies {
     thumbnailUrl: string
@@ -193,8 +194,8 @@ const ContactSection = () => {
         handle: string
     }[]
     return (
-        <article className="fixed right-4 top-2 w-fit rounded-3xl">
-            <ul className="gap-1">
+        <article className="fixed bottom-2 right-4 w-fit rounded-3xl md:top-2">
+            <ul className="grid gap-3 md:flex">
                 {contacts.map(({ href, handle, account, logoUrl }) => (
                     <li key={account}>
                         <a
@@ -206,7 +207,7 @@ const ContactSection = () => {
                             <img
                                 src={logoUrl}
                                 alt={account}
-                                className="size-4 md:size-8"
+                                className="size-6 md:size-8"
                             />
                         </a>
                     </li>
