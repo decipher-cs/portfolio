@@ -1,9 +1,13 @@
 import { PropsWithChildren } from "react"
 
-export const Button = (props: PropsWithChildren) => {
-    const { children } = props
+export const Button = (props: PropsWithChildren & { fullWidth?: boolean }) => {
+    const { children, fullWidth } = props
     return (
-        <button className="border-customBorder rounded-md border bg-customBlackDark px-8 py-3 hover:border-customRed">
+        <button
+            className={
+                "rounded-md border border-customBorder bg-customBlackDark px-8 py-3 hover:border-customRed "
+            }
+        >
             <span className="">{children}</span>
         </button>
     )

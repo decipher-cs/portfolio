@@ -1,121 +1,219 @@
-import { PropsWithChildren } from 'react';
+import { TechCarousal } from "./components/TechCarousal"
+import { Button } from "./components/Button"
 
 function App() {
     return (
-        <div
-            className={
-                'min-w-screen relative block min-h-svh text-white ' +
-                'bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black '
-            }
-        >
-            <div
-                className="fixed bottom-4 w-screen"
-                style={{
-                    /* From https://css.glass */
-                    background: 'rgba(255, 255, 255, 0)',
-                    // boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-                    // backdropFilter: 'blur(9.5px)',
-                    // WebkitBackdropFilter: 'blur(9.5px)',
-                }}
-            >
-                <nav className="absolute bottom-4 ml-[50%] -translate-x-1/2 rounded-xl border bg-customBlack px-10 py-3">
-                    <ul className="flex gap-6">
-                        <li>Home</li>
-                        <li>Projects</li>
-                        <li>Contact</li>
-                    </ul>
-                </nav>
+        <>
+            <div className={"px-4 pb-48 pt-11 text-white"}>
+                <h1 className="text-center font-azonix text-5xl md:text-6xl ">
+                    De_cipher
+                </h1>
+
+                <span className="relative my-9 flex justify-center">
+                    <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-customRed to-transparent opacity-75"></div>
+
+                    <span className="z-10 px-6 text-center font-azonix text-sm font-medium md:text-lg">
+                        Full Stack Web Developer
+                    </span>
+                </span>
+
+                <TechCarousal />
+                <Projects />
             </div>
-            <Section>
-                <h1 className="text-8xl">decipher</h1>
-                <p> web developer</p>
-                <p> javascript, typescript, react, node</p>
-            </Section>
-            <ProjectsSection />
-            <Section>
-                <h1 className="text-5xl">Get in touch</h1>
-                <ul className="flex gap-6">
-                    <li>Github</li>
-                    <li>Twitter</li>
-                    <li>Email</li>
-                </ul>
-            </Section>
-        </div>
-    );
+            <ContactSection />
+        </>
+    )
 }
 
-const Section = (props: PropsWithChildren) => {
+const projects = [
+    {
+        thumbnailUrl: "../public/pathfinder thumbnail.png",
+        name: "Pathfinder Visualizer",
+        technologies: ["javascript", "typescript", "react"],
+        features: ["virtualization", "web workers"],
+        appUrl: "https://tranquil-cat-414e66.netlify.app/",
+        sourceCode:
+            "https://github.com/decipher-cs/Trailblazer-Pathfinder-Visualizer",
+        description:
+            "Visualizer and maze solver. Supports multiple algorithms like Astar, BFS, DFS, and Dijkstra",
+    },
+    {
+        thumbnailUrl:
+            "https://github.com/decipher-cs/cipher-connect/raw/main/assets/design_source.jpg",
+        name: "Multimedia Messaging App",
+        technologies: [
+            "javascript",
+            "typescript",
+            "react",
+            "node",
+            "express",
+            "sockets",
+        ],
+        features: ["sockets"],
+        appUrl: "https://cipher-connect.onrender.com/",
+        sourceCode: "https://github.com/decipher-cs/cipher-connect/",
+        description: "A feature rich messaging app",
+    },
+    {
+        thumbnailUrl: "/kriptpharma.netlify.app_.png",
+        name: "Kriptpharma",
+        technologies: ["javascript", "typescript", "react"],
+        features: [],
+        appUrl: "https://kriptpharma.netlify.app/",
+        sourceCode: "https://github.com/decipher-cs/kriptpharma",
+        description: "Catalog website for a pharmaceutical company",
+    },
+    {
+        thumbnailUrl:
+            "https://res.cloudinary.com/dz209s6jk/image/upload/v1554827486/Challenges/jfrcfmcisi1xiwm4rl1s.jpg",
+        name: "Restful Countries",
+        technologies: ["Vanilla JS", "REST API"],
+        features: [],
+        appUrl: "https://benevolent-wisp-773a15.netlify.app/",
+        sourceCode: "https://github.com/decipher-cs/Restful-Countries",
+        description:
+            "Frontend website displaying statistics for more than 220 countries using the official rest countries API",
+    },
+    {
+        thumbnailUrl:
+            "https://res.cloudinary.com/dz209s6jk/image/upload/v1554827486/Challenges/jfrcfmcisi1xiwm4rl1s.jpg",
+        name: "Restful Countries",
+        technologies: ["Vanilla JS", "REST API"],
+        features: [],
+        appUrl: "https://benevolent-wisp-773a15.netlify.app/",
+        sourceCode: "https://github.com/decipher-cs/Restful-Countries",
+        description:
+            "Frontend website displaying statistics for more than 220 countries using the official rest countries API",
+    },
+] satisfies {
+    thumbnailUrl: string
+    name: string
+    technologies: string[]
+    appUrl: string
+    sourceCode: string
+    features: string[]
+    description: string
+}[]
+
+const Projects = () => {
     return (
-        <section className="h-svh border-b-2 border-b-white">
-            {props.children}
+        <section className="grid justify-center gap-10">
+            {projects.map(
+                ({
+                    technologies,
+                    name,
+                    description,
+                    features,
+                    sourceCode,
+                    appUrl,
+                    thumbnailUrl,
+                }) => (
+                    <article
+                        key={name}
+                        className="grid grid-cols-1 gap-8 rounded-md border border-customBorder bg-customBlackDark px-4 py-10 sm:max-w-screen-sm sm:px-6  md:max-w-screen-md lg:max-w-screen-lg lg:grid-cols-2 lg:gap-16 lg:px-8"
+                    >
+                        <div className="relative h-64 overflow-hidden rounded-lg border border-customBorder md:h-80 lg:order-first lg:h-96">
+                            <img
+                                alt={name + " thumbnail"}
+                                src={thumbnailUrl}
+                                className="absolute inset-0 size-full object-cover"
+                            />
+                        </div>
+
+                        <div className="grid gap-5 py-6">
+                            <h2 className="text-3xl font-bold sm:text-4xl">
+                                {name}
+                            </h2>
+
+                            <p className="text-xl leading-8 text-gray-200">
+                                {description}
+                            </p>
+
+                            <div className="my-3 flex flex-wrap items-center gap-3">
+                                {technologies.map((val, i) => (
+                                    <span
+                                        key={i}
+                                        className="whitespace-nowrap rounded-full bg-customBlack px-5 py-2 text-sm text-gray-200"
+                                    >
+                                        {val.toUpperCase()}
+                                    </span>
+                                ))}
+                            </div>
+
+                            <div className="mt-7 flex w-full gap-4">
+                                <a
+                                    href={appUrl}
+                                    target="_blank"
+                                    className="inline-block"
+                                >
+                                    <Button>Demo</Button>
+                                </a>
+                                <a
+                                    href={sourceCode}
+                                    target="_blank"
+                                    className="inline-block"
+                                >
+                                    <Button>Source Code</Button>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                )
+            )}
         </section>
-    );
-};
+    )
+}
 
-const ProjectsSection = () => {
-    /* Don't nest components. This will cause avoidable re-renders... or at least use memo. */
-    const Item = () => {
-        return (
-            <article className="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg">
-                <img
-                    alt=""
-                    src="https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
-                    className="absolute inset-0 size-full object-cover"
-                />
+const ContactSection = () => {
+    const contacts = [
+        {
+            logoUrl: "/github-mark-white.svg",
+            account: "github",
+            href: "https://www.github.com/decipher-cs",
+            handle: "decipher-cs",
+        },
+        {
+            logoUrl:
+                "https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg",
 
-                <div className="relative bg-gradient-to-t from-gray-900/50 to-gray-900/25 pt-32 sm:pt-48 lg:pt-64">
-                    <div className="p-4 sm:p-6">
-                        <a href="#">
-                            <h3 className="mt-0.5 text-lg text-white">
-                                How to position your furniture for positivity
-                            </h3>
+            account: "twitter",
+            href: "https://twitter.com/de_cipher0",
+            handle: "decipher-cs",
+        },
+        {
+            logoUrl: "/email.svg",
+            account: "email",
+            href: "mailto:7h6ms082@duck.com",
+            handle: "7h6ms082@duck.com",
+        },
+    ] satisfies {
+        logoUrl: string
+        account: string
+        href: string
+        handle: string
+    }[]
+    return (
+        <article className="fixed right-4 top-2 w-fit rounded-3xl">
+            <ul className="gap-1">
+                {contacts.map(({ href, handle, account, logoUrl }) => (
+                    <li key={account}>
+                        <a
+                            href={href}
+                            className="block rounded-full border border-customBorder bg-customBlackDark  p-3 hover:border-customRed"
+                            title={account}
+                            target="_blank"
+                        >
+                            <img
+                                src={logoUrl}
+                                alt={account}
+                                className="size-4 md:size-8"
+                            />
                         </a>
+                    </li>
+                ))}
+            </ul>
+        </article>
+    )
+}
 
-                        <p className="mt-2 line-clamp-3 text-sm/relaxed text-white/95">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Recusandae dolores, possimus pariatur animi
-                            temporibus nesciunt praesentium dolore sed nulla
-                            ipsum eveniet corporis quidem, mollitia itaque minus
-                            soluta, voluptates neque explicabo tempora nisi
-                            culpa eius atque dignissimos. Molestias explicabo
-                            corporis voluptatem?
-                        </p>
-                    </div>
-                </div>
-            </article>
-        );
-    };
-
-    return (
-        <section className="h-svh border-b-2 border-b-white">
-            <h1 className="m-2 p-2 text-5xl">projects</h1>
-            <section
-                className="m-auto w-full"
-                style={{
-                    mask: 'linear-gradient(90deg, transparent, white 20%, white 80%, transparent)',
-                }}
-            >
-                <div
-                    className="m-[0_auto] flex min-h-[300px] w-[90%] items-center overflow-hidden border-2"
-                    style={{
-                        mask: 'linear-gradient(90deg, transparent, white 20%, white 80%, transparent)',
-                        borderImage: 'linear-gradient(90deg, black, red) 1',
-                    }}
-                >
-                    {Array(2)
-                        .fill(null)
-                        .map((v, i) => {
-                            return (
-                                <div className="flex animate-horizontalScroll py-6">
-                                    <Item />
-                                    <Item />
-                                </div>
-                            );
-                        })}
-                </div>
-            </section>
-        </section>
-    );
-};
-
-export default App;
+export default App
