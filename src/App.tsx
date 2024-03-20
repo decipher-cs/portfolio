@@ -13,10 +13,8 @@ function App() {
                     De_cipher
                 </h1>
 
-                <div className="custom-background size-40 border" />
-
                 <span className="relative my-9 flex justify-center">
-                    <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-customRed to-transparent opacity-75"></div>
+                    <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-accent to-transparent opacity-75"></div>
 
                     <span className="z-10 px-6 text-center font-azonix text-sm font-medium md:text-lg">
                         Full Stack Web Developer
@@ -118,9 +116,9 @@ const Projects = () => {
                 }) => (
                     <article
                         key={name}
-                        className="grid grid-cols-1 gap-8 border border-customBorder bg-secondary px-4 py-10 sm:max-w-screen-sm  sm:px-6 md:max-w-screen-md lg:max-w-screen-lg lg:grid-cols-2 lg:gap-16 lg:px-8"
+                        className="grid grid-cols-1 gap-8 border border-border bg-primary px-4 py-10 sm:max-w-screen-sm  sm:px-6 md:max-w-screen-md lg:max-w-screen-lg lg:grid-cols-2 lg:gap-16 lg:px-8"
                     >
-                        <div className="relative h-64 overflow-hidden rounded-sm border border-customBorder md:h-80 lg:order-first lg:h-96">
+                        <div className="relative h-64 overflow-hidden rounded-sm border border-border md:h-80 lg:order-first lg:h-96">
                             <img
                                 alt={name + " thumbnail"}
                                 src={thumbnailUrl}
@@ -141,7 +139,7 @@ const Projects = () => {
                                 {technologies.map((val, i) => (
                                     <span
                                         key={i}
-                                        className="whitespace-nowrap rounded-full bg-customBlack px-5 py-2 text-sm text-gray-200"
+                                        className="whitespace-nowrap rounded-full bg-secondary px-5 py-2 text-sm text-gray-200"
                                     >
                                         {val.toUpperCase()}
                                     </span>
@@ -207,7 +205,7 @@ const ContactSection = () => {
                     <li key={account}>
                         <a
                             href={href}
-                            className="block rounded-full border border-customBorder bg-secondary  p-3 hover:border-customRed"
+                            className="block rounded-full border border-border bg-secondary p-3 hover:border-accent"
                             title={account}
                             target="_blank"
                         >

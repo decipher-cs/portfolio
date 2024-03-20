@@ -43,7 +43,7 @@ export const TechCarousal = () => {
         },
     ] satisfies { href: string; src: string; title: string }[]
     return (
-        <section className="my-10 w-full">
+        <section className="my-10 w-full" tabIndex={-1}>
             <div
                 className="m-[0_auto] flex items-center overflow-hidden sm:w-full md:w-1/2 lg:w-1/2"
                 style={{
@@ -54,6 +54,7 @@ export const TechCarousal = () => {
                     {[...technologies, ...technologies].map(
                         ({ title, href, src }, i) => (
                             <a
+                                tabIndex={-1}
                                 key={i}
                                 className="size-20 p-5 lg:size-24"
                                 title={title}
