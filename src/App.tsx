@@ -151,10 +151,12 @@ const Projects = () => {
                                     href={appUrl}
                                     target="_blank"
                                     className="inline-block"
+                                    tabIndex={-1}
                                 >
                                     <Button>Demo</Button>
                                 </a>
                                 <a
+                                    tabIndex={-1}
                                     href={sourceCode}
                                     target="_blank"
                                     className="inline-block"
