@@ -14,9 +14,9 @@ export default {
                 ],
             },
             colors: {
-                primary: "#4f4f4f",
-                secondary: "#1e1e1e",
-                accents: "#ff2828",
+                primary: colors.gray[950],
+                secondary: colors.gray[900],
+                accent: "#aeacfb",
                 border: colors.gray[700],
                 text: colors.gray[100],
             },
