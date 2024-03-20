@@ -14,10 +14,11 @@ export default {
                 ],
             },
             colors: {
-                customBlack: "#4f4f4f",
-                customBlackDark: "#1e1e1e",
-                customRed: "#ff2828",
-                customBorder: colors.gray[700],
+                primary: "#4f4f4f",
+                secondary: "#1e1e1e",
+                accents: "#ff2828",
+                border: colors.gray[700],
+                text: colors.gray[100],
             },
             keyframes: {
                 horizontalScroll: {
