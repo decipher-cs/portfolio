@@ -8,15 +8,13 @@ import pathfinderThumbnail from "./assets/pathfinder thumbnail.png"
 function App() {
     return (
         <>
-            <div className={"px-4 pb-48 pt-11 text-white"}>
-                <h1 className="text-center font-azonix text-5xl md:text-6xl ">
-                    De_cipher
-                </h1>
+            <div className={"px-7 py-11 text-white md:px-4"}>
+                <h1 className="text-center text-5xl md:text-6xl ">DE_CIPHER</h1>
 
-                <span className="relative my-9 flex justify-center">
+                <span className="relative my-4 flex justify-center">
                     <div className="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-accent to-transparent opacity-75"></div>
 
-                    <span className="z-10 px-6 text-center font-azonix text-sm font-medium md:text-lg">
+                    <span className="z-10 px-6 text-center text-sm font-medium md:text-lg">
                         Full Stack Web Developer
                     </span>
                 </span>
@@ -103,7 +101,7 @@ const projects = [
 
 const Projects = () => {
     return (
-        <section className="grid justify-center gap-10">
+        <section className="grid justify-center gap-5 md:gap-10">
             {projects.map(
                 ({
                     technologies,
@@ -116,9 +114,9 @@ const Projects = () => {
                 }) => (
                     <article
                         key={name}
-                        className="grid grid-cols-1 gap-8 border border-border bg-primary px-4 py-10 sm:max-w-screen-sm  sm:px-6 md:max-w-screen-md lg:max-w-screen-lg lg:grid-cols-2 lg:gap-16 lg:px-8"
+                        className="grid grid-cols-1 border border-border bg-primary p-6 sm:max-w-screen-sm sm:px-6 md:max-w-screen-md  md:gap-8 md:py-10 lg:max-w-screen-lg lg:grid-cols-2 lg:gap-16 lg:px-8"
                     >
-                        <div className="relative h-64 overflow-hidden rounded-sm border border-border md:h-80 lg:order-first lg:h-96">
+                        <div className="relative h-60 overflow-hidden rounded-sm border border-border md:h-80 lg:order-first lg:h-96">
                             <img
                                 alt={name + " thumbnail"}
                                 src={thumbnailUrl}
@@ -126,27 +124,27 @@ const Projects = () => {
                             />
                         </div>
 
-                        <div className="grid gap-5 py-6">
-                            <h2 className="text-3xl font-bold sm:text-4xl">
+                        <div className="grid gap-5 pt-4 md:py-6">
+                            <h2 className="text-2xl font-bold sm:text-4xl md:text-3xl">
                                 {name}
                             </h2>
 
-                            <p className="text-xl leading-8 text-gray-200">
+                            <p className="leading-8 text-gray-200 md:text-xl">
                                 {description}
                             </p>
 
-                            <div className="my-3 flex flex-wrap items-center gap-3">
+                            <div className="flex flex-wrap items-center gap-1 md:gap-2">
                                 {technologies.map((val, i) => (
                                     <span
                                         key={i}
-                                        className="whitespace-nowrap rounded-full bg-secondary px-5 py-2 text-sm text-gray-200"
+                                        className="whitespace-nowrap rounded-full bg-secondary px-3 py-2 text-xs text-gray-200 md:px-5 md:py-2 md:text-sm"
                                     >
-                                        {val.toUpperCase()}
+                                        {val}
                                     </span>
                                 ))}
                             </div>
 
-                            <div className="mt-7 flex w-full gap-4">
+                            <div className="flex w-full gap-4 md:mt-7">
                                 <a
                                     href={appUrl}
                                     target="_blank"
@@ -214,7 +212,7 @@ const ContactSection = () => {
                             <img
                                 src={logoUrl}
                                 alt={account}
-                                className="size-6 md:size-7"
+                                className="size-5 md:size-7"
                             />
                         </a>
                     </li>

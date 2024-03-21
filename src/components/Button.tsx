@@ -5,8 +5,9 @@ export const Button = (props: PropsWithChildren & { fullWidth?: boolean }) => {
     return (
         <button
             className={
-                "border border-border bg-secondary px-8 py-3 hover:border-accent "
+                "border border-border bg-secondary px-3 py-2 hover:border-accent md:px-8 md:py-3 "
             }
+            type="button"
         >
             <span className="">{children}</span>
         </button>
