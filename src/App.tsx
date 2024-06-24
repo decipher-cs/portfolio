@@ -33,7 +33,7 @@ const projects = [
         name: "Pathfinder Visualizer",
         technologies: ["javascript", "typescript", "react"],
         features: ["virtualization", "web workers"],
-        appUrl: "https://tranquil-cat-414e66.netlify.app/",
+        appUrl: "https://path-visualize.netlify.app/",
         sourceCode:
             "https://github.com/decipher-cs/Trailblazer-Pathfinder-Visualizer",
         description:
@@ -63,7 +63,7 @@ const projects = [
         name: "Kriptpharma",
         technologies: ["javascript", "typescript", "react"],
         features: [],
-        appUrl: "https://kriptpharma.netlify.app/",
+        appUrl: "http://kriptpharmaceuticals.com/",
         sourceCode: "https://github.com/decipher-cs/kriptpharma",
         description: "Catalog website for a pharmaceutical company",
     },
