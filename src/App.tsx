@@ -4,6 +4,7 @@ import githubLogoSvg from "./assets/github-mark-white.svg"
 import emailSvg from "./assets/email.svg"
 import kriptpharmaThumbnail from "./assets/kriptpharma.netlify.app_.png"
 import pathfinderThumbnail from "./assets/pathfinder thumbnail.png"
+import fincorpThumbnail from "./assets/fincorp-thumbnail.png"
 
 function App() {
     return (
@@ -28,6 +29,24 @@ function App() {
 }
 
 const projects = [
+    {
+        thumbnailUrl: fincorpThumbnail,
+        name: "Bharat Fincorp",
+        technologies: ["javascript", "typescript", "react"],
+        features: [],
+        appUrl: "https://bharatfincorp.netlify.app/",
+        sourceCode: "",
+        description: "Landing page for a financial firm",
+    },
+    {
+        thumbnailUrl: kriptpharmaThumbnail,
+        name: "Kriptpharma",
+        technologies: ["javascript", "typescript", "react"],
+        features: [],
+        appUrl: "http://kriptpharmaceuticals.com/",
+        sourceCode: "https://github.com/decipher-cs/kriptpharma",
+        description: "Catalog website for a pharmaceutical company",
+    },
     {
         thumbnailUrl: pathfinderThumbnail,
         name: "Pathfinder Visualizer",
@@ -57,15 +76,6 @@ const projects = [
         appUrl: "https://cipher-connect.onrender.com/",
         sourceCode: "https://github.com/decipher-cs/cipher-connect/",
         description: "A feature rich messaging app",
-    },
-    {
-        thumbnailUrl: kriptpharmaThumbnail,
-        name: "Kriptpharma",
-        technologies: ["javascript", "typescript", "react"],
-        features: [],
-        appUrl: "http://kriptpharmaceuticals.com/",
-        sourceCode: "https://github.com/decipher-cs/kriptpharma",
-        description: "Catalog website for a pharmaceutical company",
     },
     {
         thumbnailUrl:
